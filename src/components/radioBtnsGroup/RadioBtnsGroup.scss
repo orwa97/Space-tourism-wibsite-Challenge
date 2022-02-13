@@ -1,0 +1,31 @@
+.radioBtnsBox {
+  display: flex;
+  &.horizontally {
+    flex-direction: row;
+  }
+  &.vertically {
+    flex-direction: column;
+  }
+
+  height: auto;
+}
+.radioBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #fff;
+  height: 100%;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

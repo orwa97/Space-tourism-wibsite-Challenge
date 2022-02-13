@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5.5rem;
+
+  .horizontalLine {
+    width: 47.3rem;
+    height: 0.1rem;
+    background-color: #fff;
+    opacity: 0.7485;
+  }
+
+  .navBox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 96%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.04);
+    // filter: blur(8.155rem);
+    // -webkit-filter: blur(8.155rem);
+
+    .mainNav {
+      width: 100%;
+      // display: flex;
+      // align-items: center;
+      // justify-content: left;
+      margin-left: 12.5rem;
+    }
+    .radioBtnLabel {
+      &,
+      .pageNumber {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        color: #fff;
+      }
+      .pageNumber {
+        margin-right: 1.1rem;
+      }
+
+      padding: 3.9rem 0;
+    }
+
+    label {
+      &:nth-last-of-type(-n + 2) {
+        margin-left: 4.8rem;
+      }
+    }
+  }
+}
