@@ -1,0 +1,18 @@
+.subLayout {
+  .tabName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 0;
+    color: #d0d6f9;
+  }
+  label {
+    margin-right: 3.5rem;
+  }
+
+  input[type="radio"]:checked + label {
+    span {
+      color: #fff;
+    }
+  }
+}

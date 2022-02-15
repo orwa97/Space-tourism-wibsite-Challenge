@@ -5,10 +5,18 @@
 }
 html {
   font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   min-height: 100vh;
   color: #fff;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bellefair";
+  font-weight: 400;
 }
 
 h1 {
@@ -29,11 +37,19 @@ h4 {
 
 h5 {
   font-size: 2.8rem;
+  font-family: "Barlow Condensed";
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 4.725px;
+  text-transform: uppercase;
 }
 
 p {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: normal;
   font-size: 1.8rem;
   line-height: 3.2rem;
   text-align: left;
-  width: 45rem;
+  width: 44.4rem;
 }

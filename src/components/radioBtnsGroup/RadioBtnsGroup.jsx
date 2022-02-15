@@ -1,19 +1,19 @@
 import classNames from "classnames";
 import "./RadioBtnsGroup.scss";
-const RadioButtonsGroup = (props) => {
+const RadioBtnsGroup = (props) => {
   const labels = props.label.map((item, i) => {
     return (
       <div className={`radioBtn`} key={item.id}>
         <input
           type="radio"
-          id={`btn-${item.id}`}
+          id={item.id}
           value={item.value}
           name={props.name}
           onChange={props.onChange}
-          checked={props.isSelected === `btn-${item.id}`}
+          checked={props.checked === item.id}
         ></input>
 
-        <label className="radio-label" htmlFor={`btn-${item.id}`}>
+        <label className="radio-label" htmlFor={item.id}>
           {item.option}
         </label>
       </div>
@@ -33,4 +33,4 @@ const RadioButtonsGroup = (props) => {
   );
 };
 
-export default RadioButtonsGroup;
+export default RadioBtnsGroup;

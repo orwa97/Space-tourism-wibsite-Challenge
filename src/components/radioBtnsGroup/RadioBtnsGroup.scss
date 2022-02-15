@@ -18,14 +18,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  line-height: 1.9rem;
+  letter-spacing: 0.27rem;
   font-size: 1.6rem;
   color: #fff;
   height: 100%;
   cursor: pointer;
-}
+  border-bottom: solid 0.3rem transparent;
+  border-top: solid 0.3rem transparent;
+  transition: all ease-in-out 0.2s;
 
+  &:hover {
+    border-bottom: solid 0.3rem rgba(255, 255, 255, 0.5);
+  }
+}
+input[type="radio"]:checked + label {
+  border-bottom: solid 0.3rem rgb(255, 255, 255);
+}
 input[type="radio"] {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  display: none;
 }

@@ -2,9 +2,12 @@ import classes from "./ExploreBtn.module.scss";
 
 const ExploreBtn = (props) => {
   return (
-    <button className={classes.btn} onClick={props.onClick}>
-      <h4>Explore</h4>
-    </button>
+    <div className={classes.container}>
+      {/* <span className={classes.outerRing} id="outerRing" />x */}
+      <button className={classes.btn} onClick={props.onClick}>
+        <h4>EXPLORE</h4>
+      </button>
+    </div>
   );
 };
 

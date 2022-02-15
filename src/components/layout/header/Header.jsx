@@ -1,7 +1,68 @@
 import classes from "./Header.module.scss";
 import { ReactComponent as Logo } from "../../../assets/shared/logo.svg";
 import RadioBtnsGroup from "../../radioBtnsGroup/RadioBtnsGroup";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 const Header = (props) => {
+  const location = useLocation();
+  const [isChecked, setIsChecked] = useState("home");
+  const navigateTo = useNavigate();
+  const labels = useMemo(() => {
+    return [
+      {
+        id: "mainNav-00",
+        value: "home",
+        option: (
+          <div className={classes.radioBtnLabel}>
+            <span className={classes.pageNumber}>00</span>HOME
+          </div>
+        ),
+      },
+      {
+        id: "mainNav-01",
+        value: "destination",
+        option: (
+          <span className={classes.radioBtnLabel}>
+            <span className={classes.pageNumber}>01</span>DESTINATION
+          </span>
+        ),
+      },
+      {
+        id: "mainNav-02",
+        value: "crew",
+        option: (
+          <span className={classes.radioBtnLabel}>
+            <span className={classes.pageNumber}>02</span>CREW
+          </span>
+        ),
+      },
+      {
+        id: "mainNav-03",
+        value: "technology",
+        option: (
+          <span className={classes.radioBtnLabel}>
+            <span className={classes.pageNumber}>03</span>TECHNOLOGY
+          </span>
+        ),
+      },
+    ];
+  }, []);
+
+  useEffect(() => {
+    const pathname = location.pathname;
+    for (const obj of labels) {
+      if (obj.value === pathname.replace("/", "")) {
+        setIsChecked(obj.id);
+        break;
+      }
+    }
+  }, [location]);
+
+  const mainNavHandler = useCallback((e) => {
+    setIsChecked(e.target.id);
+    navigateTo(`${e.target.value}`);
+  }, []);
+
   return (
     <div className={`${classes.container} ${props.className}`}>
       <Logo className={classes.logo} />
@@ -11,46 +72,9 @@ const Header = (props) => {
           className={classes.mainNav}
           name="mainNav"
           flexDirection="row"
-          label={[
-            {
-              id: "00",
-              value: "page-home",
-              option: (
-                <div className={classes.radioBtnLabel}>
-                  <span className={classes.pageNumber}>00</span>HOME
-                </div>
-              ),
-            },
-            {
-              id: "01",
-              value: "page-destination",
-              option: (
-                <span className={classes.radioBtnLabel}>
-                  <span className={classes.pageNumber}>01</span>DESTINATION
-                </span>
-              ),
-            },
-            {
-              id: "02",
-              value: "page-crew",
-              option: (
-                <span className={classes.radioBtnLabel}>
-                  <span className={classes.pageNumber}>02</span>CREW
-                </span>
-              ),
-            },
-            {
-              id: "03",
-              value: "page-technology",
-              option: (
-                <span className={classes.radioBtnLabel}>
-                  <span className={classes.pageNumber}>03</span>TECHNOLOGY
-                </span>
-              ),
-            },
-          ]}
-          onChange
-          isSelected
+          label={labels}
+          onChange={mainNavHandler}
+          checked={isChecked}
         />
       </div>
     </div>

@@ -5,13 +5,15 @@ import Destination from "./pages/destination/Destination";
 import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
 import Layout from "./components/layout/Layout";
+import Header from "./components/layout/header/Header";
 
 const App = () => {
   return (
     <Layout>
       <BrowserRouter>
+        <Header className={classes.header} />
         <Routes>
-          <Route path="/" exact element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />

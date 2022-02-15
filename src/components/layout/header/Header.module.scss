@@ -7,28 +7,32 @@
   padding-left: 5.5rem;
 
   .horizontalLine {
-    width: 47.3rem;
+    // max-width: 30%;
+    width: 30%;
     height: 0.1rem;
-    background-color: #fff;
-    opacity: 0.7485;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-right: -5%;
+    z-index: 1;
   }
 
   .navBox {
     display: flex;
     justify-content: left;
     align-items: center;
-    width: 96%;
+    justify-self: stretch;
+    width: 65%;
     height: auto;
     background: rgba(255, 255, 255, 0.04);
-    // filter: blur(8.155rem);
-    // -webkit-filter: blur(8.155rem);
+    backdrop-filter: blur(8rem);
+    -webkit-backdrop-filter: blur(8rem);
 
     .mainNav {
       width: 100%;
       // display: flex;
       // align-items: center;
       // justify-content: left;
-      margin-left: 12.5rem;
+      margin-left: 9%;
+      margin-right: 9%;
     }
     .radioBtnLabel {
       &,
@@ -41,15 +45,14 @@
       }
       .pageNumber {
         margin-right: 1.1rem;
+        font-weight: bold;
       }
 
-      padding: 3.9rem 0;
+      padding: 3.6rem 0;
     }
 
     label {
-      &:nth-last-of-type(-n + 2) {
-        margin-left: 4.8rem;
-      }
+      margin-left: 5rem;
     }
   }
 }
