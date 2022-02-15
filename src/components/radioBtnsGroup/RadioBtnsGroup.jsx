@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import "./RadioBtnsGroup.scss";
 const RadioBtnsGroup = (props) => {
   const labels = props.label.map((item, i) => {
@@ -31,6 +32,15 @@ const RadioBtnsGroup = (props) => {
       {labels}
     </div>
   );
+};
+
+RadioBtnsGroup.propTypes = {
+  label: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired,
+  flexDirection: PropTypes.string,
+  classNames: PropTypes.string,
+  onChange: PropTypes.func,
+  checked: PropTypes.string,
 };
 
 export default RadioBtnsGroup;

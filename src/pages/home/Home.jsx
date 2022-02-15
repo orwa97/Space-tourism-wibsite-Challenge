@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import SubLayout from "../../components/subLayout/SubLayout";
 import ExploreBtn from "./exploreBtn/ExploreBtn";
 import classes from "./Home.module.scss";
-import background from "../../assets/home/bg-desktop.jpg";
+// import background from "/assets/home/bg-desktop.jpg";
 const Home = (props) => {
   const navigate = useNavigate();
   const onClickHander = () => {
-    navigate("/technology");
+    navigate("/destination");
   };
   return (
     <SubLayout
@@ -24,7 +24,7 @@ const Home = (props) => {
         </>
       }
       rightHalf={<ExploreBtn onClick={onClickHander} />}
-      background={background}
+      background="/assets/home/bg-desktop.jpg"
     />
     // <div className={classes.container}>
     //   <div className={classes.box}>

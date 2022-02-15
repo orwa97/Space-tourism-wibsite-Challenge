@@ -1,18 +1,101 @@
 .subLayout {
-  .tabName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.2rem 0;
-    color: #d0d6f9;
-  }
-  label {
-    margin-right: 3.5rem;
+  // LEFT SIDE
+  & > div:first-child {
+    h5 {
+      span {
+        color: rgba(255, 255, 255, 0.25);
+        font-weight: bold;
+      }
+      margin-bottom: 9.7rem;
+    }
+
+    .destImg {
+      margin-left: 15%;
+      @keyframes shimmy {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(150px, -25px) scale(0.2);
+        }
+      }
+
+      &.animated {
+        animation: shimmy 2s 1 reverse;
+        animation-direction: alternate;
+      }
+    }
   }
 
-  input[type="radio"]:checked + label {
-    span {
-      color: #fff;
+  // RIGHT SIDE
+  & > div:last-child {
+    .desNav {
+      margin-bottom: 4rem;
+
+      .tabName {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2rem 0;
+        color: #d0d6f9;
+      }
+      label {
+        margin-right: 3.5rem;
+      }
+
+      input[type="radio"]:checked + label {
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    h2 {
+      line-height: 9rem;
+      text-transform: uppercase;
+    }
+    p {
+      color: #d0d6f9;
+      margin: 3.5rem 0 5.4rem;
+    }
+
+    .horizontalLine {
+      display: block;
+      width: 44.4rem;
+      height: 0.1rem;
+      background: #383b4b;
+    }
+
+    .travel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2.8rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        span {
+          &:first-child {
+            font-family: "Barlow Condensed";
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 2.3625px;
+            color: #d0d6f9;
+          }
+          &:last-child {
+            font-family: "Bellefair";
+            font-size: 28px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 1.2rem;
+          }
+        }
+      }
     }
   }
 }

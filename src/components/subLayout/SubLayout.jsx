@@ -5,8 +5,11 @@ const SubLayout = (props) => {
     <div
       className={classes.container}
       style={{
-        background: `url(${props.background}) no-repeat center center fixed`,
+        backgroundImage: `url(${props.background})`,
         backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
+        backgroundAttachment: "fixed",
       }}
     >
       <div className={`${classes.box} ${props.className}`}>
@@ -20,7 +23,7 @@ const SubLayout = (props) => {
 SubLayout.propTypes = {
   background: PropTypes.string,
   leftHalf: PropTypes.node.isRequired,
-  rightHalf: PropTypes.element.isRequired,
+  rightHalf: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 

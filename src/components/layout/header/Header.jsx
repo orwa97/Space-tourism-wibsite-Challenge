@@ -1,5 +1,5 @@
 import classes from "./Header.module.scss";
-import { ReactComponent as Logo } from "../../../assets/shared/logo.svg";
+import { ReactComponent as Logo } from "../../../logo.svg";
 import RadioBtnsGroup from "../../radioBtnsGroup/RadioBtnsGroup";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
