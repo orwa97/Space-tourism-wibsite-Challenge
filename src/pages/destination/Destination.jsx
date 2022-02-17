@@ -1,12 +1,19 @@
 import Content from "../../components/layout/content/Content";
 import SubLayout from "../../components/subLayout/SubLayout";
 import classes from "./Destination.module.scss";
-// import background from "/assets/destination/background-destination-desktop.jpg";
 import data from "../../data.json";
 import RadioBtnsGroup from "../../components/radioBtnsGroup/RadioBtnsGroup";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import useNavByKeys from "../../hooks/useNavByKeys";
+
 const Destination = (props) => {
   const [tabbed, setTabbed] = useState(0);
+  /**
+   * tab through the navigator useing the ArrowKeys or the mouse's Wheel
+   * passing the navigator's state along with its state updating function
+   */
+  useNavByKeys(tabbed, setTabbed);
+
   const backgroundUrl =
     "./assets/destination/background-destination-desktop.jpg";
   const info = data.destinations;

@@ -1,17 +1,22 @@
-import Content from "../../components/layout/content/Content";
 import SubLayout from "../../components/subLayout/SubLayout";
 import classes from "./Crew.module.scss";
 import data from "../../data.json";
 import RadioBtnsGroup from "../../components/radioBtnsGroup/RadioBtnsGroup";
 import { useMemo, useState } from "react/cjs/react.development";
-
+import useNavByKeys from "../../hooks/useNavByKeys";
 const Crew = (props) => {
   const [tabbed, setTabbed] = useState(0);
+
+  /**
+   * tab through the navigator useing the ArrowKeys or the mouse's Wheel
+   * passing the navigator's state along with its state updating function
+   */
+  useNavByKeys(tabbed, setTabbed);
+
   const backgroundUrl = "./assets/crew/background-crew-desktop.jpg";
   const info = data.crew;
-
   const crewNavHandler = (e) => {
-    const index = e.target.id.split("-")[0];
+    const index = +e.target.id.split("-")[1];
     setTabbed(index);
   };
 
@@ -22,8 +27,8 @@ const Crew = (props) => {
     return info.map((obj, i) => {
       return {
         id: `crew-${i}`,
-        value: `${info[i].name.split(" ")[0]}`,
-        option: "",
+        value: `${info[i].name.split(" ")[0].toLowerCase()}`,
+        option: <div className={classes.labelBox}></div>,
       };
     });
   }, [info]);
@@ -43,7 +48,7 @@ const Crew = (props) => {
           <h3>{info[tabbed].name}</h3>
           <p>{info[tabbed].bio}</p>
           <RadioBtnsGroup
-            classNames={classes.crewNav}
+            className={classes.crewNav}
             label={labels}
             flexDirection="row"
             name="crewNav"
@@ -61,7 +66,7 @@ const Crew = (props) => {
         </>
       ),
     };
-  }, [info]);
+  }, [info, tabbed]);
   return (
     <SubLayout
       className={classes.subLayout}

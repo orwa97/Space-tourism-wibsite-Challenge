@@ -15,7 +15,7 @@ const RadioBtnsGroup = (props) => {
         ></input>
 
         <label className="radio-label" htmlFor={item.id}>
-          {item.option}
+          {Object.keys(item).includes("option") ? item.option : null}
         </label>
       </div>
     );
