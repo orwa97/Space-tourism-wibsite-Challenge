@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 /**
  *
- * @param {number} state : tab's id
+ * @param {Number} state : tab's id
  * @param {function} setState
+ * @param {Number} num : the number of tabs
  */
-const useNavByKeys = (state, setState) => {
+const useNavByKeys = (state, setState, num) => {
   //   const [tabbed, setTabbed] = useState();
   const windowEventHandler = (e) => {
     const event = e.type === "wheel" ? +e.wheelDelta : e.key;
@@ -13,7 +14,7 @@ const useNavByKeys = (state, setState) => {
       setState((prev) => (prev != 0 ? prev - 1 : prev));
     }
     if (event === "ArrowRight" || event === "ArrowDown" || event < 0) {
-      setState((prev) => (prev != 3 ? prev + 1 : prev));
+      setState((prev) => (prev != num - 1 ? prev + 1 : prev));
     }
   };
   useEffect(() => {

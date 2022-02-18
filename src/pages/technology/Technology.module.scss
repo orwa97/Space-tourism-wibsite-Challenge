@@ -1,0 +1,75 @@
+.subLayout {
+  h5 {
+    span {
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: bold;
+    }
+    margin-bottom: 13.5rem;
+  }
+
+  .subBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .info {
+      margin-left: 8rem;
+
+      span {
+        font-family: Barlow Condensed;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        color: #d0d6f9;
+      }
+    }
+  }
+  // LEFT SIDE
+  & > div:first-child {
+    margin-bottom: 9.4rem;
+
+    h3 {
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    p {
+      color: #d0d6f9;
+      margin-top: 1.8rem;
+    }
+
+    .techNav {
+      label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        h4 {
+          line-height: 37px;
+          text-align: center;
+          letter-spacing: 2px;
+        }
+        &:hover {
+          border-color: #fff;
+        }
+      }
+      & > :not(:last-of-type) {
+        margin-bottom: 3.2rem;
+      }
+
+      input[type="radio"]:checked + label {
+        background-color: #fff;
+        color: #0b0d17;
+      }
+    }
+  }
+
+  & > div:last-child {
+    position: absolute;
+    right: 0;
+  }
+}

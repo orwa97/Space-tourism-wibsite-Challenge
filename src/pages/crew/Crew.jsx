@@ -11,7 +11,7 @@ const Crew = (props) => {
    * tab through the navigator useing the ArrowKeys or the mouse's Wheel
    * passing the navigator's state along with its state updating function
    */
-  useNavByKeys(tabbed, setTabbed);
+  useNavByKeys(tabbed, setTabbed, 4);
 
   const backgroundUrl = "./assets/crew/background-crew-desktop.jpg";
   const info = data.crew;
@@ -61,7 +61,7 @@ const Crew = (props) => {
         <>
           <img
             src={info[tabbed].images.webp}
-            className={`${classes.destImg}`}
+            className={`${classes.crewImg}`}
           />
         </>
       ),

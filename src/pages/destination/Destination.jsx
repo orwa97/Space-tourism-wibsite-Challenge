@@ -12,7 +12,7 @@ const Destination = (props) => {
    * tab through the navigator useing the ArrowKeys or the mouse's Wheel
    * passing the navigator's state along with its state updating function
    */
-  useNavByKeys(tabbed, setTabbed);
+  useNavByKeys(tabbed, setTabbed, 4);
 
   const backgroundUrl =
     "./assets/destination/background-destination-desktop.jpg";
