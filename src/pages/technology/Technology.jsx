@@ -4,17 +4,36 @@ import data from "../../data.json";
 import RadioBtnsGroup from "../../components/radioBtnsGroup/RadioBtnsGroup";
 import { useMemo, useState } from "react/cjs/react.development";
 import useNavByKeys from "../../hooks/useNavByKeys";
+import useMediaQueries from "../../hooks/useMediaQueries";
 const Technology = (props) => {
   const [tabbed, setTabbed] = useState(0);
+  const mediaQuery = useMediaQueries();
 
   /**
    * tab through the navigator useing the ArrowKeys or the mouse's Wheel
    * passing the navigator's state along with its state updating function
    */
-  useNavByKeys(tabbed, setTabbed, 3);
+  useNavByKeys(tabbed, setTabbed, 3, {
+    wheel: mediaQuery === "bigScreen",
+    arrows: true,
+  });
 
-  const backgroundUrl = "/assets/technology/background-technology-desktop.jpg";
   const info = data.technology;
+  const backgroundUrl = "/assets/technology/background-technology-desktop.jpg";
+
+  /**
+   * return the destination image url & the tabs flex-direction
+   * based on the media query & the tebbed nav.
+   */
+  const [imgUrl, flexDirection] = useMemo(() => {
+    if (mediaQuery === "bigScreen") {
+      const url = info[tabbed].images.portrait;
+      return [url, "column"];
+    } else {
+      const url = info[tabbed].images.landscape;
+      return [url, "row"];
+    }
+  }, [tabbed, mediaQuery]);
 
   const techNavHandler = (e) => {
     const index = +e.target.id.split("-")[1];
@@ -22,7 +41,8 @@ const Technology = (props) => {
   };
 
   /**
-   *
+   * return the radioBtns labels (the navigator)
+   * based on the info object (destination json data)
    */
   const labels = useMemo(() => {
     return info.map((obj, i) => {
@@ -42,14 +62,16 @@ const Technology = (props) => {
     return {
       left: (
         <>
-          <h5>
-            <span>03</span> SPACE LAUNCH 101
-          </h5>
+          {mediaQuery === "bigScreen" && (
+            <h5>
+              <span>03</span> SPACE LAUNCH 101
+            </h5>
+          )}
           <div className={classes.subBox}>
             <RadioBtnsGroup
               className={classes.techNav}
               label={labels}
-              flexDirection="column"
+              flexDirection={flexDirection}
               name="techNav"
               onChange={techNavHandler}
               checked={`tech-${tabbed}`}
@@ -63,16 +85,20 @@ const Technology = (props) => {
         </>
       ),
       right: (
-        <img
-          src={info[tabbed].images.portrait}
-          className={`${classes.techImg}`}
-        />
+        <>
+          {mediaQuery != "bigScreen" && (
+            <h5>
+              <span>03</span> SPACE LAUNCH 101
+            </h5>
+          )}
+          <img src={imgUrl} className={`${classes.techImg}`} />
+        </>
       ),
     };
-  }, [info, tabbed]);
+  }, [info, tabbed, imgUrl, mediaQuery]);
   return (
     <SubLayout
-      className={classes.subLayout}
+      className={`${classes.subLayout} ${classes[mediaQuery]}`}
       background={backgroundUrl}
       rightHalf={pageSides.right}
       leftHalf={pageSides.left}
