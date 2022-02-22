@@ -3,10 +3,16 @@ import { ReactComponent as Logo } from "../../../logo.svg";
 import RadioBtnsGroup from "../../radioBtnsGroup/RadioBtnsGroup";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useMediaQueries from "../../../hooks/useMediaQueries";
 const Header = (props) => {
   const location = useLocation();
   const [isChecked, setIsChecked] = useState("home");
   const navigateTo = useNavigate();
+  const mediaQuery = useMediaQueries();
+
+  /**
+   *
+   */
   const labels = useMemo(() => {
     return [
       {
@@ -64,7 +70,9 @@ const Header = (props) => {
   }, []);
 
   return (
-    <div className={`${classes.container} ${props.className}`}>
+    <div
+      className={`${classes.container} ${props.className} ${classes[mediaQuery]}`}
+    >
       <Logo className={classes.logo} />
       <span className={classes.horizontalLine} />
       <div className={classes.navBox}>

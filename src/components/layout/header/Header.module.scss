@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 5.5rem;
+  padding-left: clamp(3rem, 2vw, 5.5rem);
 
   .horizontalLine {
     width: 30%;
@@ -30,7 +30,7 @@
       // display: flex;
       // align-items: center;
       // justify-content: left;
-      margin-left: 9%;
+      margin-left: clamp(0%, 1vw, 9%);
       margin-right: 9%;
     }
     .radioBtnLabel {
@@ -51,7 +51,33 @@
     }
 
     label {
-      margin-left: 5rem;
+      margin-left: clamp(3rem, 2.5vw, 5rem);
+    }
+  }
+}
+
+/*
+********** MEDIA QUERIES **********
+*/
+
+.container.tablet-641minWidth {
+  top: 0;
+
+  .horizontalLine {
+    display: none;
+  }
+
+  .navBox {
+    width: auto;
+    .mainNav {
+      margin: 0 4.8rem;
+      justify-content: space-between;
+    }
+    .radioBtnLabel {
+      font-size: 1.4rem;
+      .pageNumber {
+        display: none;
+      }
     }
   }
 }

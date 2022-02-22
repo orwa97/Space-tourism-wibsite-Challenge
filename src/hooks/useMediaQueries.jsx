@@ -8,19 +8,19 @@ import { useMemo } from "react/cjs/react.development";
 
 const useMediaQueries = () => {
   const isBigScreen = useMediaQuery({ minWidth: 1281 });
-  const isDesktop = useMediaQuery({ maxWidth: 1280, minWidth: 1025 });
-  const isTablet = useMediaQuery({ maxWidth: 1024 });
-  const isSmartPhone = useMediaQuery({ maxWidth: 640 });
+  const isDesktop = useMediaQuery({ minWidth: 1025 });
+  const isTablet = useMediaQuery({ minWidth: 641 });
+  const isSmartPhone = useMediaQuery({ minWidth: 320 });
 
   const className = useMemo(() => {
     if (isBigScreen) {
-      return "bigScreen";
+      return "bigScreen-1281minWidth";
     } else if (isDesktop) {
-      return "desktop";
+      return "desktop-1025minWidth";
     } else if (isTablet) {
-      return "tablet";
+      return "tablet-641minWidth";
     } else if (isSmartPhone) {
-      return "smartPhone";
+      return "smartPhone-320minWidth";
     } else return null;
   }, [isBigScreen, isDesktop, isTablet, isSmartPhone]);
 
