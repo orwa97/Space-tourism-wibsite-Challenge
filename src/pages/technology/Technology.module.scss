@@ -77,6 +77,8 @@
 /*
 ********** MEDIA QUERIES **********
 */
+
+// ---------- min-width: 641px ----------
 .subLayout.tablet-641minWidth {
   position: static;
   flex-direction: column-reverse;
@@ -146,3 +148,5 @@
     }
   }
 }
+
+// ----------------------------------------

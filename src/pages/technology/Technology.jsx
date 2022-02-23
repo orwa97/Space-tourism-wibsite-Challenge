@@ -15,7 +15,7 @@ const Technology = (props) => {
    * passing the navigator's state along with its state updating function
    */
   useNavByKeys(tabbed, setTabbed, 3, {
-    wheel: device === "desktob",
+    wheel: (device === "bigScreen") | (device === "desktop"),
     arrows: true,
   });
 
@@ -68,7 +68,7 @@ const Technology = (props) => {
     return {
       left: (
         <>
-          {isDesktop && (
+          {!!isDesktop && (
             <h5>
               <span>03</span> SPACE LAUNCH 101
             </h5>

@@ -1,5 +1,4 @@
 .container {
-  //   -webkit-background-size: cover;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -12,10 +11,5 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 0 clamp(1rem, 10vw, 14rem);
-
-    // .leftHalf {
-    //   display: flex;
-    //   flex-direction: column;
-    // }
   }
 }

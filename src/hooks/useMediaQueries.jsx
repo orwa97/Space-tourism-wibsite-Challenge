@@ -21,7 +21,7 @@ const useMediaQueries = () => {
       return "tablet-641minWidth";
     } else if (isSmartPhone) {
       return "smartPhone-320minWidth";
-    } else return null;
+    } else return "default-0minWidth";
   }, [isBigScreen, isDesktop, isTablet, isSmartPhone]);
 
   return className;

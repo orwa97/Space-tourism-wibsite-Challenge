@@ -5,14 +5,20 @@ import data from "../../data.json";
 import RadioBtnsGroup from "../../components/radioBtnsGroup/RadioBtnsGroup";
 import { useMemo, useState } from "react";
 import useNavByKeys from "../../hooks/useNavByKeys";
-
+import useMediaQueries from "../../hooks/useMediaQueries";
 const Destination = (props) => {
   const [tabbed, setTabbed] = useState(0);
+  const mediaQuery = useMediaQueries();
+  const device = mediaQuery.split("-")[0];
+
   /**
    * tab through the navigator useing the ArrowKeys or the mouse's Wheel
    * passing the navigator's state along with its state updating function
    */
-  useNavByKeys(tabbed, setTabbed, 4);
+  useNavByKeys(tabbed, setTabbed, 4, {
+    wheel: (device === "bigScreen") | (device === "desktop"),
+    arrows: true,
+  });
 
   const backgroundUrl =
     "./assets/destination/background-destination-desktop.jpg";
@@ -86,7 +92,7 @@ const Destination = (props) => {
 
   return (
     <SubLayout
-      className={classes.subLayout}
+      className={`${classes.subLayout} ${classes[mediaQuery]}`}
       background={backgroundUrl}
       leftHalf={pageSides.left}
       rightHalf={pageSides.right}
