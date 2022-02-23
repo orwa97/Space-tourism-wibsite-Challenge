@@ -5,3 +5,50 @@
     margin: 2.4rem 0;
   }
 }
+
+/*
+********** MEDIA QUERIES **********
+*/
+
+// ---------- min-width: 641px ----------
+.subLayout.tablet-641minWidth {
+  // height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 20%;
+
+  & > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      line-height: 15rem;
+    }
+    h5 {
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      text-align: center;
+    }
+  }
+
+  & > div:last-child {
+    margin-top: 1.2rem;
+    .expBtn {
+      button {
+        width: 24.2rem;
+        height: 24.2rem;
+
+        &:hover {
+          outline-width: 0;
+        }
+      }
+    }
+  }
+}

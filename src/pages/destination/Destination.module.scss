@@ -105,14 +105,53 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
     h5 {
+      font-size: 2rem;
+      letter-spacing: 0.3375rem;
       margin-bottom: 6rem;
       align-self: flex-start;
+      margin-left: 3.85rem;
     }
 
     .destImg {
       width: 30rem;
       margin-left: 0;
+    }
+  }
+
+  & > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .desNav {
+      margin-bottom: 3.2rem;
+    }
+    h2 {
+      font-size: 8rem;
+      line-height: 9.2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      text-align: center;
+      margin-top: 0.8rem;
+      margin-bottom: 5rem;
+    }
+    p,
+    .horizontalLine,
+    .travel {
+      width: 74.5%;
+    }
+
+    .travel {
+      justify-content: space-around;
+
+      div {
+        align-items: center;
+      }
     }
   }
 }

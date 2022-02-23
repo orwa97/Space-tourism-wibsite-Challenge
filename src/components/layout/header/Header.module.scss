@@ -19,7 +19,9 @@
     justify-content: left;
     align-items: center;
     justify-self: stretch;
-    width: 65%;
+    min-width: 45rem;
+    width: 58.6vw;
+
     height: auto;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(8rem);
@@ -27,9 +29,6 @@
 
     .mainNav {
       width: 100%;
-      // display: flex;
-      // align-items: center;
-      // justify-content: left;
       margin-left: clamp(0%, 1vw, 9%);
       margin-right: 9%;
     }
@@ -68,7 +67,6 @@
   }
 
   .navBox {
-    width: auto;
     .mainNav {
       margin: 0 4.8rem;
       justify-content: space-between;
