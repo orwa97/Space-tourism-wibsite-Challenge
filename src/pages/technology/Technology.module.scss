@@ -98,7 +98,7 @@
       display: flex;
     }
     h5 {
-      font-size: 2rem;
+      font-size: clamp(2rem, 2.2vw, 2.8rem);
       margin-bottom: 6rem;
       margin-left: 3.5rem;
     }
@@ -134,6 +134,7 @@
         justify-content: center;
         margin-top: 4.4rem;
         margin-left: 0;
+        margin-bottom: 2rem;
 
         p {
           text-align: center;
@@ -149,4 +150,48 @@
   }
 }
 
-// ----------------------------------------
+// --------------------------------------
+
+// ---------- min-width: 1025px ----------
+.subLayout.desktop-1025minWidth {
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+    h5 {
+    }
+    .subBox {
+      flex-direction: column-reverse;
+
+      .info {
+        margin-left: 0;
+
+        p {
+          max-width: 44.4rem;
+          width: 40vw;
+        }
+      }
+
+      .techNav {
+        margin-top: 5vw;
+
+        & > div {
+          margin-bottom: 0;
+        }
+        & > :not(:last-of-type) {
+          margin-right: 2.5vw;
+        }
+        label {
+          width: 6.25vw;
+          height: 6.25vw;
+
+          h4 {
+            font-size: 2.5vw;
+          }
+        }
+      }
+    }
+  }
+}

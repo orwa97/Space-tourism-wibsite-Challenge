@@ -13,3 +13,17 @@
     padding: 0 clamp(1rem, 10vw, 14rem);
   }
 }
+
+/*
+********** MEDIA QUERIES **********
+*/
+
+// ---------- min-width: 641px ----------
+.box.tablet-641minWidth {
+  align-items: center;
+}
+
+// ---------- min-width: 1025px ----------
+.box.desktop-1025minWidth {
+  padding: 0 8vw;
+}

@@ -85,7 +85,7 @@
       position: absolute;
       top: 0;
       left: 3.85rem;
-      font-size: 2rem;
+      font-size: clamp(2rem, 2.2vw, 2.8rem);
       line-height: 2.4rem;
       letter-spacing: 0.3375rem;
       margin-bottom: 0;
@@ -141,3 +141,17 @@
 }
 
 // ----------------------------------------
+
+// ---------- min-width: 1025px ----------
+.subLayout.desktop-1025minWidth {
+  & > div:first-child {
+    h5 {
+      margin-bottom: 11.72vw;
+    }
+  }
+  & > div:last-child {
+    .crewImg {
+      height: 50.4vw;
+    }
+  }
+}

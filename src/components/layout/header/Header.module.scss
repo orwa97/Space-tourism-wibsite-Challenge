@@ -7,10 +7,10 @@
   padding-left: clamp(3rem, 2vw, 5.5rem);
 
   .horizontalLine {
-    width: 30%;
+    width: 37vw;
     height: 0.1rem;
     background-color: rgba(255, 255, 255, 0.25);
-    margin-right: -5%;
+    margin-right: -8vw;
     z-index: 1;
   }
 
@@ -29,8 +29,12 @@
 
     .mainNav {
       width: 100%;
-      margin-left: clamp(0%, 1vw, 9%);
+      margin-left: 8.3vw;
       margin-right: 9%;
+
+      & > :not(:first-of-type) {
+        margin-left: 3.34vw;
+      }
     }
     .radioBtnLabel {
       &,
@@ -48,10 +52,6 @@
 
       padding: 3.6rem 0;
     }
-
-    label {
-      margin-left: clamp(3rem, 2.5vw, 5rem);
-    }
   }
 }
 
@@ -59,6 +59,7 @@
 ********** MEDIA QUERIES **********
 */
 
+// ---------- min-width: 641px ----------
 .container.tablet-641minWidth {
   top: 0;
 
@@ -69,7 +70,7 @@
   .navBox {
     .mainNav {
       margin: 0 4.8rem;
-      justify-content: space-between;
+      justify-content: space-around;
     }
     .radioBtnLabel {
       font-size: 1.4rem;
