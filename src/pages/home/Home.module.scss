@@ -10,9 +10,25 @@
 ********** MEDIA QUERIES **********
 */
 
-// ---------- min-width: 641px ----------
-.subLayout.tablet-641minWidth {
-  // height: 100vh;
+.subLayout.desktop-1025minWidth {
+  & > div:last-child {
+    .expBtn {
+      button {
+        width: 21.1vw;
+        height: 21.1vw;
+        min-height: 24.2rem;
+        min-width: 24.2rem;
+
+        &:hover {
+          outline-width: 7vw;
+        }
+      }
+    }
+  }
+}
+
+.subLayout.tablet-641minWidth,
+.subLayout.smartPhone-320minWidth {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -54,18 +70,31 @@
   }
 }
 
-// ---------- min-width: 1025px ----------
-.subLayout.desktop-1025minWidth {
+.subLayout.smartPhone-320minWidth {
+  & > div:first-child {
+    h1 {
+      font-size: clamp(7.5rem, 21.5vw, 15rem);
+      margin: 3.75vw 0;
+      line-height: clamp(5rem, 26.67vw, 15rem);
+    }
+    p {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      width: 87.2vw;
+      line-height: clamp(2.2rem, 6.67vw, 2.8rem);
+    }
+
+    h5 {
+      font-size: clamp(1.6rem, 4.267vw, 2rem);
+    }
+  }
+
   & > div:last-child {
     .expBtn {
       button {
-        width: 21.1vw;
-        height: 21.1vw;
-        min-height: 24.2rem;
-        min-width: 24.2rem;
-
-        &:hover {
-          outline-width: 7vw;
+        width: 40vw;
+        height: 40vw;
+        h4 {
+          font-size: clamp(1.6rem, 5.33vw, 3.2rem);
         }
       }
     }

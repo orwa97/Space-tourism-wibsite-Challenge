@@ -9,6 +9,7 @@ const Header = (props) => {
   const [isChecked, setIsChecked] = useState("home");
   const navigateTo = useNavigate();
   const mediaQuery = useMediaQueries();
+  const device = mediaQuery.split("-")[0];
 
   /**
    *
@@ -74,17 +75,26 @@ const Header = (props) => {
       className={`${classes.container} ${props.className} ${classes[mediaQuery]}`}
     >
       <Logo className={classes.logo} />
-      <span className={classes.horizontalLine} />
-      <div className={classes.navBox}>
-        <RadioBtnsGroup
-          className={classes.mainNav}
-          name="mainNav"
-          flexDirection="row"
-          label={labels}
-          onChange={mainNavHandler}
-          checked={isChecked}
-        />
-      </div>
+      {device != "smartPhone" && (
+        <>
+          <span className={classes.horizontalLine} />
+          <div className={classes.navBox}>
+            <RadioBtnsGroup
+              className={classes.mainNav}
+              name="mainNav"
+              flexDirection="row"
+              label={labels}
+              onChange={mainNavHandler}
+              checked={isChecked}
+            />
+          </div>
+        </>
+      )}
+      {device === "smartPhone" && (
+        <>
+          <object type="image/svg+xml" data="/assets/svg/nav.svg"></object>
+        </>
+      )}
     </div>
   );
 };

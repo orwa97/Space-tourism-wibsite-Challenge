@@ -160,15 +160,18 @@
     justify-content: space-between;
     margin-bottom: 0;
 
-    h5 {
-    }
     .subBox {
       flex-direction: column-reverse;
 
       .info {
         margin-left: 0;
 
+        h3 {
+          font-size: clamp(4.8rem, 4.5vw, 5.6rem);
+        }
+
         p {
+          margin-top: 1.4vw;
           max-width: 44.4rem;
           width: 40vw;
         }

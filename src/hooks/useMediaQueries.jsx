@@ -1,9 +1,8 @@
 import { useMediaQuery } from "react-responsive";
 import { useMemo } from "react/cjs/react.development";
+
 /**
- *
  * @returns className based on the media query.
- * ClassName (string): bigScreen, desktop, tablet or smartPhone.
  */
 
 const useMediaQueries = () => {
