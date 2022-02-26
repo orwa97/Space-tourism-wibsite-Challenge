@@ -6,6 +6,11 @@
   align-items: center;
   padding-left: clamp(3rem, 2vw, 5.5rem);
 
+  .logo {
+    width: clamp(3.6rem, 10.67vw, 4.8rem);
+    height: clamp(3.6rem, 10.67vw, 4.8rem);
+  }
+
   .horizontalLine {
     width: 37vw;
     height: 0.1rem;
@@ -59,7 +64,6 @@
 ********** MEDIA QUERIES **********
 */
 
-// ---------- min-width: 641px ----------
 .container.tablet-641minWidth {
   top: 0;
 
@@ -81,6 +85,8 @@
   }
 }
 
-// ---------- min-width: 320px ----------
-.container.tablet-641minWidth {
+.container.smartPhone-640maxWidth {
+  margin: 0;
+  top: 0;
+  padding: 2.4rem;
 }

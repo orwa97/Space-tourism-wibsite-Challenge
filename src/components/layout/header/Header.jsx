@@ -74,7 +74,13 @@ const Header = (props) => {
     <div
       className={`${classes.container} ${props.className} ${classes[mediaQuery]}`}
     >
-      <Logo className={classes.logo} />
+      <object
+        type="image/svg+xml"
+        data="/assets/svg/logo.svg"
+        className={classes.logo}
+      ></object>
+
+      {/* <Logo className={classes.logo} /> */}
       {device != "smartPhone" && (
         <>
           <span className={classes.horizontalLine} />

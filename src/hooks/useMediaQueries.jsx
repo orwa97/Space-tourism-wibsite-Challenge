@@ -9,7 +9,7 @@ const useMediaQueries = () => {
   const isBigScreen = useMediaQuery({ minWidth: 1281 });
   const isDesktop = useMediaQuery({ minWidth: 1025 });
   const isTablet = useMediaQuery({ minWidth: 641 });
-  const isSmartPhone = useMediaQuery({ minWidth: 320 });
+  const isSmartPhone = useMediaQuery({ maxWidth: 640 });
 
   const className = useMemo(() => {
     if (isBigScreen) {
@@ -19,7 +19,7 @@ const useMediaQueries = () => {
     } else if (isTablet) {
       return "tablet-641minWidth";
     } else if (isSmartPhone) {
-      return "smartPhone-320minWidth";
+      return "smartPhone-640maxWidth";
     } else return "default-0minWidth";
   }, [isBigScreen, isDesktop, isTablet, isSmartPhone]);
 

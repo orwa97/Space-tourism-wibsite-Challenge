@@ -28,7 +28,7 @@
 }
 
 .subLayout.tablet-641minWidth,
-.subLayout.smartPhone-320minWidth {
+.subLayout.smartPhone-640maxWidth {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -70,27 +70,38 @@
   }
 }
 
-.subLayout.smartPhone-320minWidth {
+.subLayout.smartPhone-640maxWidth {
+  position: static;
   & > div:first-child {
+    position: absolute;
+    top: 16.8vh;
+
     h1 {
-      font-size: clamp(7.5rem, 21.5vw, 15rem);
+      font-size: clamp(4rem, 21.5vw, 15rem);
       margin: 3.75vw 0;
-      line-height: clamp(5rem, 26.67vw, 15rem);
+      line-height: clamp(4rem, 26.67vw, 15rem);
     }
     p {
-      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-size: clamp(1rem, 4vw, 1.6rem);
       width: 87.2vw;
-      line-height: clamp(2.2rem, 6.67vw, 2.8rem);
+      max-width: 44.4rem;
+      line-height: clamp(1.7rem, 6.67vw, 2.8rem);
     }
 
     h5 {
-      font-size: clamp(1.6rem, 4.267vw, 2rem);
+      font-size: clamp(1.2rem, 4.267vw, 2rem);
+      letter-spacing: clamp(0.2rem, 0.72vw, 0.4725rem);
+      text-align: center;
     }
   }
 
   & > div:last-child {
+    position: absolute;
+    bottom: 7.2vh;
+
     .expBtn {
       button {
+        margin-top: 0;
         width: 40vw;
         height: 40vw;
         h4 {
