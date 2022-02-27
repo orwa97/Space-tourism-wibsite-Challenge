@@ -85,7 +85,9 @@ const Header = (props) => {
         data="/assets/svg/logo.svg"
         aria-labelledby="main-logo"
         className={classes.logo}
-      ></object>
+      >
+        main-logo
+      </object>
 
       {device != "smartPhone" && (
         <>
