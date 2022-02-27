@@ -104,9 +104,10 @@
         margin-top: 0;
         width: 40vw;
         height: 40vw;
-        h4 {
-          font-size: clamp(1.6rem, 5.33vw, 3.2rem);
-        }
+        min-width: 11rem;
+        min-height: 11rem;
+
+        font-size: clamp(1.6rem, 5.33vw, 3.2rem);
       }
     }
   }

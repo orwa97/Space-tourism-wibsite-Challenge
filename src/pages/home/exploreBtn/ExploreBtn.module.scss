@@ -20,6 +20,10 @@
     cursor: pointer;
     outline: solid 0 rgba(255, 255, 255, 0.1);
     transition: all ease-in-out 0.3s;
+    font-family: "Bellefair";
+    font-weight: 400;
+    font-size: 3.2rem;
+
     &:hover {
       outline-width: 9rem;
     }

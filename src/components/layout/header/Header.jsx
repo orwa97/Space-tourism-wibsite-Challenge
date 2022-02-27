@@ -20,9 +20,9 @@ const Header = (props) => {
         id: "mainNav-00",
         value: "home",
         option: (
-          <div className={classes.radioBtnLabel}>
+          <span className={classes.radioBtnLabel}>
             <span className={classes.pageNumber}>00</span>HOME
-          </div>
+          </span>
         ),
       },
       {
@@ -83,6 +83,7 @@ const Header = (props) => {
       <object
         type="image/svg+xml"
         data="/assets/svg/logo.svg"
+        alt="main-logo"
         className={classes.logo}
       ></object>
 
