@@ -2,7 +2,7 @@ import classes from "./Technology.module.scss";
 import SubLayout from "../../components/subLayout/SubLayout";
 import data from "../../data.json";
 import RadioBtnsGroup from "../../components/radioBtnsGroup/RadioBtnsGroup";
-import { useMemo, useState } from "react/cjs/react.development";
+import { useMemo, useState } from "react";
 import useNavByKeys from "../../hooks/useNavByKeys";
 import useMediaQueries from "../../hooks/useMediaQueries";
 const Technology = (props) => {

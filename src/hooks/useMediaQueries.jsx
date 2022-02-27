@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { useMemo } from "react/cjs/react.development";
+import { useMemo } from "react";
 
 /**
  * @returns className based on the media query.
