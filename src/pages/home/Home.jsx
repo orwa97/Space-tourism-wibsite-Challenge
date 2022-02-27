@@ -3,10 +3,10 @@ import SubLayout from "../../components/subLayout/SubLayout";
 import useMediaQueries from "../../hooks/useMediaQueries";
 import ExploreBtn from "./exploreBtn/ExploreBtn";
 import classes from "./Home.module.scss";
-// import background from "/assets/home/bg-desktop.jpg";
 const Home = (props) => {
   const navigate = useNavigate();
   const mediaQuery = useMediaQueries();
+  const device = mediaQuery.split("-")[0];
 
   const onClickHander = () => {
     navigate("/destination");
@@ -30,7 +30,7 @@ const Home = (props) => {
       rightHalf={
         <ExploreBtn onClick={onClickHander} className={classes.expBtn} />
       }
-      background="/assets/home/bg-desktop.jpg"
+      background={`/assets/home/bg-${device}.jpg`}
     />
   );
 };

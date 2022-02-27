@@ -2,6 +2,12 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  background-color: #0b0d1742;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-blend-mode: screen;
 
   .box {
     width: 100%;
@@ -18,12 +24,10 @@
 ********** MEDIA QUERIES **********
 */
 
-// ---------- min-width: 641px ----------
 .box.tablet-641minWidth {
   align-items: center;
 }
 
-// ---------- min-width: 1025px ----------
 .box.desktop-1025minWidth {
   padding: 0 8vw;
 }

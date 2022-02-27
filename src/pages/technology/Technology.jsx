@@ -20,7 +20,7 @@ const Technology = (props) => {
   });
 
   const info = data.technology;
-  const backgroundUrl = "/assets/technology/background-technology-desktop.jpg";
+  const backgroundUrl = `/assets/technology/background-technology-${device}.jpg`;
 
   /**
    * return the destination image url & the tabs flex-direction
@@ -83,7 +83,7 @@ const Technology = (props) => {
               checked={`tech-${tabbed}`}
             />
             <div className={classes.info}>
-              <span>THE TERMINOLOGY ...</span>
+              <span>THE TERMINOLOGY...</span>
               <h3>{info[tabbed].name}</h3>
               <p>{info[tabbed].description}</p>
             </div>

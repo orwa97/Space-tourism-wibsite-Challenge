@@ -19,7 +19,7 @@ const Crew = (props) => {
     arrows: true,
   });
 
-  const backgroundUrl = "./assets/crew/background-crew-desktop.jpg";
+  const backgroundUrl = `./assets/crew/background-crew-${device}.jpg`;
   const info = data.crew;
   const crewNavHandler = (e) => {
     const index = +e.target.id.split("-")[1];
@@ -47,9 +47,11 @@ const Crew = (props) => {
     return {
       left: (
         <>
-          <h5>
-            <span>02</span> MEET THE CREW
-          </h5>
+          {device != "smartPhone" && (
+            <h5>
+              <span>02</span> MEET THE CREW
+            </h5>
+          )}
           <h4>{info[tabbed].role}</h4>
           <h3>{info[tabbed].name}</h3>
           <p>{info[tabbed].bio}</p>
@@ -65,6 +67,11 @@ const Crew = (props) => {
       ),
       right: (
         <>
+          {device === "smartPhone" && (
+            <h5>
+              <span>02</span> MEET THE CREW
+            </h5>
+          )}
           <img
             src={info[tabbed].images.webp}
             className={`${classes.crewImg}`}
@@ -72,7 +79,7 @@ const Crew = (props) => {
         </>
       ),
     };
-  }, [info, tabbed]);
+  }, [info, tabbed, device]);
   return (
     <SubLayout
       className={`${classes.subLayout} ${classes[mediaQuery]}`}

@@ -62,8 +62,21 @@
 ********** MEDIA QUERIES **********
 */
 
-// ---------- min-width: 641px ----------
-.subLayout.tablet-641minWidth {
+.subLayout.desktop-1025minWidth {
+  & > div:first-child {
+    h5 {
+      margin-bottom: 11.72vw;
+    }
+  }
+  & > div:last-child {
+    .crewImg {
+      height: 50.4vw;
+    }
+  }
+}
+
+.subLayout.tablet-641minWidth,
+.subLayout.smartPhone-640maxWidth {
   height: 100vh;
 
   position: static;
@@ -140,18 +153,68 @@
   }
 }
 
-// ----------------------------------------
+.subLayout.smartPhone-640maxWidth {
+  height: auto;
+  // position: static;
+  // margin-top: 8.8rem;
+  flex-direction: column-reverse;
+  justify-content: space-between;
 
-// ---------- min-width: 1025px ----------
-.subLayout.desktop-1025minWidth {
-  & > div:first-child {
+  & > div:last-child {
+    margin-top: 8.8rem;
+    width: 87.2vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    border-bottom: 1px solid #383838;
+
     h5 {
-      margin-bottom: 11.72vw;
+      font-size: clamp(1.4rem, 4.267vw, 2rem);
+      line-height: clamp(2rem, 5.07vw, 3.4rem);
+      letter-spacing: clamp(0.2rem, 0.72vw, 0.4725rem);
+      margin-bottom: 3.2rem;
+      span {
+        color: rgba(255, 255, 255, 0.25);
+        font-weight: bold;
+      }
+    }
+
+    .crewImg {
+      height: 59.2vw;
+      max-height: 53.2rem;
+      min-height: 15rem;
     }
   }
-  & > div:last-child {
-    .crewImg {
-      height: 50.4vw;
+
+  & > div:first-child {
+    margin-top: 3.2rem;
+
+    h4 {
+      margin-top: 0;
+      font-size: clamp(1.6rem, 5.33vw, 3.2rem);
+    }
+
+    h3 {
+      font-size: clamp(2rem, 6.4vw, 4rem);
+      line-height: clamp(2.4rem, 7.47vw, 4.6rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.6rem);
+      width: 87.2vw;
+      height: 15.6rem;
+      max-width: 44.4rem;
+      line-height: clamp(1.7rem, 6.67vw, 2.8rem);
+    }
+
+    .crewNav {
+      position: absolute;
+      margin: 0;
+      bottom: 0;
+      margin-bottom: clamp(-150px, calc(700px - 100vh), -20px);
     }
   }
 }

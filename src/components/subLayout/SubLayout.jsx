@@ -8,10 +8,6 @@ const SubLayout = (props) => {
       className={classes.container}
       style={{
         backgroundImage: `url(${props.background})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
       }}
     >
       <div

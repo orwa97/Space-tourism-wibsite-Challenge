@@ -78,8 +78,54 @@
 ********** MEDIA QUERIES **********
 */
 
-// ---------- min-width: 641px ----------
-.subLayout.tablet-641minWidth {
+.subLayout.desktop-1025minWidth {
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+    .subBox {
+      flex-direction: column-reverse;
+
+      .info {
+        margin-left: 0;
+
+        h3 {
+          font-size: clamp(4.8rem, 4.5vw, 5.6rem);
+        }
+
+        p {
+          margin-top: 1.4vw;
+          max-width: 44.4rem;
+          width: 40vw;
+        }
+      }
+
+      .techNav {
+        margin-top: 5vw;
+
+        & > div {
+          margin-bottom: 0;
+        }
+        & > :not(:last-of-type) {
+          margin-right: 2.5vw;
+        }
+        label {
+          width: 6.25vw;
+          height: 6.25vw;
+
+          h4 {
+            font-size: 2.5vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+.subLayout.tablet-641minWidth,
+.subLayout.smartPhone-640maxWidth {
   position: static;
   flex-direction: column-reverse;
   justify-content: center;
@@ -150,49 +196,63 @@
   }
 }
 
-// --------------------------------------
+.subLayout.smartPhone-640maxWidth {
+  & > div:last-child {
+    align-items: center;
+    padding-top: 8.8rem;
 
-// ---------- min-width: 1025px ----------
-.subLayout.desktop-1025minWidth {
+    h5 {
+      font-size: clamp(1.4rem, 4.267vw, 2rem);
+      line-height: clamp(2rem, 5.07vw, 3.4rem);
+      letter-spacing: clamp(0.2rem, 0.72vw, 0.4725rem);
+      margin-left: 0;
+      margin-bottom: 3.2rem;
+    }
+  }
+
   & > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 0;
-
+    margin-top: 0;
+    position: relative;
     .subBox {
-      flex-direction: column-reverse;
+      .techNav {
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        margin-bottom: clamp(-150px, calc(700px - 100vh), -50px);
+        label {
+          width: clamp(35px, 10.67vw, 60px);
+          height: clamp(35px, 10.67vw, 60px);
 
+          h4 {
+            font-size: clamp(1.4rem, 4.27vw, 2.4rem);
+            letter-spacing: normal;
+            line-height: normal;
+          }
+        }
+        & > :not(:last-of-type) {
+          margin-bottom: 0;
+          margin-right: 1.6rem;
+        }
+      }
       .info {
-        margin-left: 0;
+        margin-top: 3.4rem;
+
+        span {
+          font-size: clamp(1.2rem, 3.73vw, 1.6rem);
+        }
 
         h3 {
-          font-size: clamp(4.8rem, 4.5vw, 5.6rem);
+          font-size: clamp(2rem, 6.4vw, 4rem);
+          line-height: clamp(2.4rem, 7.47vw, 4.6rem);
         }
 
         p {
-          margin-top: 1.4vw;
+          font-size: clamp(1rem, 4vw, 1.6rem);
+          width: 87.2vw;
+          height: 15.6rem;
           max-width: 44.4rem;
-          width: 40vw;
-        }
-      }
-
-      .techNav {
-        margin-top: 5vw;
-
-        & > div {
-          margin-bottom: 0;
-        }
-        & > :not(:last-of-type) {
-          margin-right: 2.5vw;
-        }
-        label {
-          width: 6.25vw;
-          height: 6.25vw;
-
-          h4 {
-            font-size: 2.5vw;
-          }
+          line-height: clamp(1.7rem, 6.67vw, 2.8rem);
+          margin-top: 1.6rem;
         }
       }
     }

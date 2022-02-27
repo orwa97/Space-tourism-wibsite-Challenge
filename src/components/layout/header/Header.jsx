@@ -5,8 +5,9 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useMediaQueries from "../../../hooks/useMediaQueries";
 const Header = (props) => {
-  const location = useLocation();
   const [isChecked, setIsChecked] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   const navigateTo = useNavigate();
   const mediaQuery = useMediaQueries();
   const device = mediaQuery.split("-")[0];
@@ -68,7 +69,13 @@ const Header = (props) => {
   const mainNavHandler = useCallback((e) => {
     setIsChecked(e.target.id);
     navigateTo(`${e.target.value}`);
+    setTimeout(() => {
+      setIsOpen((prev) => !prev);
+    }, 200);
   }, []);
+  const mobileNavHandler = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <div
@@ -80,7 +87,6 @@ const Header = (props) => {
         className={classes.logo}
       ></object>
 
-      {/* <Logo className={classes.logo} /> */}
       {device != "smartPhone" && (
         <>
           <span className={classes.horizontalLine} />
@@ -98,7 +104,24 @@ const Header = (props) => {
       )}
       {device === "smartPhone" && (
         <>
-          <object type="image/svg+xml" data="/assets/svg/nav.svg"></object>
+          <button onClick={mobileNavHandler} className={`${classes.navBtn}`}>
+            {!isOpen && <img src="/assets/svg/nav.svg" alt="nav-button" />}
+            {isOpen && <img src="/assets/svg/close.svg" alt="nav-button" />}
+          </button>
+          <div
+            className={`${classes.navBox} ${
+              isOpen ? classes.isOpen : classes.isClosed
+            }`}
+          >
+            <RadioBtnsGroup
+              className={classes.mainNav}
+              name="mainNav"
+              flexDirection="column"
+              label={labels}
+              onChange={mainNavHandler}
+              checked={isChecked}
+            />
+          </div>
         </>
       )}
     </div>

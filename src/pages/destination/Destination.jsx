@@ -20,8 +20,7 @@ const Destination = (props) => {
     arrows: true,
   });
 
-  const backgroundUrl =
-    "./assets/destination/background-destination-desktop.jpg";
+  const backgroundUrl = `./assets/destination/background-destination-${device}.jpg`;
   const info = data.destinations;
 
   const destNavHandler = (e) => {
