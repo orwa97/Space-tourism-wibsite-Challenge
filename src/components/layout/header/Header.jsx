@@ -83,7 +83,7 @@ const Header = (props) => {
       <object
         type="image/svg+xml"
         data="/assets/svg/logo.svg"
-        alt="main-logo"
+        aria-labelledby="main-logo"
         className={classes.logo}
       ></object>
 
